@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Music_Plot"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="565.79" Width="880.263">
     <Grid>
-        
+        <lvc:CartesianChart x:Name="CartesianChartA" Series="{Binding WordList}" LegendLocation="left" Margin="0,10,10,35">
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Words" Labels="{Binding UniqueWordsSorted}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
+        <Button x:Name="LoadButton" Content="Load Text" HorizontalAlignment="Left" Margin="10,505,0,0" VerticalAlignment="Top" Width="75" Click="LoadButton_Click"/>
+        <Button x:Name="SaveButton" Content="Save Image" HorizontalAlignment="Left" Margin="90,505,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
